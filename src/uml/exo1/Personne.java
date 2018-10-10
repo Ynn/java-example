@@ -36,6 +36,18 @@ public class Personne /* extends Object */{
   // Declaration des constructeurs
   // ///////////////////////////////////////////
 
+  /**
+   * Instantiates a new personne.
+   * 
+   * @param age
+   *          l'age de la personne (positif)
+   * @param nom
+   *          le nom de la personne (sans chiffre)
+   * @param enfants
+   *          les enfants
+   * @param parents
+   *          les parents
+   */
   public Personne(int age, String nom, List<Personne> enfants,
       List<Personne> parents) {
 
@@ -149,8 +161,43 @@ public class Personne /* extends Object */{
 
   @Override
   public String toString() {
-    return "Personne [age=" + age + ", nom=" + nom + ", enfants=" + enfants
-        + ", parents=" + parents + "]";
+    return "Personne [age=" + age + ", nom=" + nom + ", enfants="
+        + this.enfants;
+    // Si on essaye d'afficher aussi les parents, on aura une boucle :
+    // + "parents="+ this.parents;
+  }
+
+  public Personne faireEnfantAvec(Personne autrePersonne, String nomEnfant) {
+
+    // ON VEUX QUE L'ENFANT CONNAISSE SES PARENTS :
+
+    // Notre enfant n'a pas encore d'enfants :
+    List<Personne> enfantsDeEnfant = new ArrayList<>();
+    List<Personne> parentsEnfant = new ArrayList<>();
+    // ajoute le premier parent :
+    parentsEnfant.add(autrePersonne);
+    // ajoute le second enfant (la personne elle meme, la personne courante, la
+    // personne sur qui on appelle la méthode, donc this) :
+    parentsEnfant.add(this);
+
+    Personne enfant = new Personne(0, nomEnfant, enfantsDeEnfant, parentsEnfant);
+
+    // ON VEUX QUE LES PARENTS CONNAISSENT LEUR ENFANT :
+
+    // Je veux ajouter l'enfant aux enfants de l'autre personne :
+    autrePersonne.enfants.add(enfant);
+    // Je veux ajouter l'enfant aux enfants de moi meme (this) :
+    this.enfants.add(enfant);
+
+    return enfant;
+  }
+
+  public List<Personne> getEnfants() {
+    return enfants;
+  }
+
+  public List<Personne> getParents() {
+    return parents;
   }
 
 }
