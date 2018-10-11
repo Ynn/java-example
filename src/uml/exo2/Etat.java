@@ -50,8 +50,11 @@ public class Etat {
 
 	@Override
 	public String toString() {
-		// return "Etat [capitale=" + capitale + ", nom=" + nom + "+ voisin]";
-		return String.format("Etat [capitale=%s, nom=%s,nombre de voisins=%d]", capitale, nom, voisins.size());
+		String lesVoisins = "";
+		for (Etat etat : voisins) {
+			lesVoisins += etat.toString();
+		}
+		return String.format("Etat [capitale=%s, nom=%s,voisins=%s]", capitale, nom, lesVoisins);
 
 	}
 
