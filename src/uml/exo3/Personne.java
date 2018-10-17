@@ -147,4 +147,13 @@ public class Personne {
 		return false;
 	}
 
+	public boolean isStudyingAt(String nom) {
+		for (University university : studyingUni) {
+			if (university.getNom().equals(nom)) {
+				return true;
+			}
+		}
+		return false;
+	}
+
 }

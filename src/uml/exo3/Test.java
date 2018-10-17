@@ -19,10 +19,12 @@ public class Test {
 		u1.addTeacher(p4);
 
 		p4.teachAt(u1);
-
 		p2.studyAt(u2);
-
 		p2.stopStudyingAt(u2);
+		p1.studyAt(u2);
+		p2.studyAt(u1);
+		p3.studyAt(u1);
+		p4.studyAt(u2);
 
 		List<Personne> list = new ArrayList<>();
 		list.add(p1);
@@ -36,6 +38,7 @@ public class Test {
 		for (Personne personne : list) {
 			System.out.println(personne);
 			System.out.println("----> enseigne ?" + personne.isTeaching());
+			System.out.println("----> etudie a la Sorbonne ?" + personne.isStudyingAt(u2.getNom()));
 		}
 
 		List<University> unis = new ArrayList<>();
