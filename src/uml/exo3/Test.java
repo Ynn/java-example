@@ -11,12 +11,18 @@ public class Test {
 		Personne p3 = new Personne("Niels", 20);
 		Personne p4 = new Personne("Mohamed", 45);
 
+		Etat e1 = new Etat("France", "Paris");
+
 		University u1 = new University("Istic", "Rennes");
 		University u2 = new University("Sorbonne", "Paris");
-		University u3 = new University("Istic", "Rennes");
 
 		u1.addTeacher(p4);
-		p4.teachAt(u3);
+
+		p4.teachAt(u1);
+
+		p2.studyAt(u2);
+
+		p2.stopStudyingAt(u2);
 
 		List<Personne> list = new ArrayList<>();
 		list.add(p1);
@@ -24,8 +30,12 @@ public class Test {
 		list.add(p3);
 		list.add(p4);
 
+		e1.addUni(u1);
+		e1.addUni(u2);
+
 		for (Personne personne : list) {
 			System.out.println(personne);
+			System.out.println("----> enseigne ?" + personne.isTeaching());
 		}
 
 		List<University> unis = new ArrayList<>();
@@ -34,6 +44,8 @@ public class Test {
 		for (University university : unis) {
 			System.out.println(university);
 		}
+
+		System.out.println(e1);
 
 	}
 }
