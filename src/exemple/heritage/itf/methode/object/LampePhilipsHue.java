@@ -1,33 +1,33 @@
-package exemple.heritage.et.itf;
+package exemple.heritage.itf.methode.object;
+
+import java.util.UUID;
 
 //Notez bien qu'on utilise impléments et pas extend :
-public class LampeConstructeur2 implements Capteur {
+public class LampePhilipsHue extends AbstractCapteur {
+
+	public LampePhilipsHue(String location) {
+		super(location);
+	}
 
 	public String serial;
 	public boolean isOn = false;
 
-	LampeConstructeur2(String serial) {
-		this.serial = serial;
-	}
-
 	@Override
 	public boolean isOn() {
-		// TODO Auto-generated method stub
+		// Fait un traitement compliqué :
+		// HTTP :
 		return isOn;
 	}
 
 	@Override
-	public String getSerial() {
-		return serial;
-	}
-
-	@Override
 	public void turnOn() {
+		// Appel HTTP :
 		isOn = true;
 	}
 
 	@Override
 	public void turnOff() {
+		// Appel HTTP :
 		isOn = false;
 	}
 

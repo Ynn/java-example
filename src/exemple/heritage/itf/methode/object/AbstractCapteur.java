@@ -1,4 +1,4 @@
-package exemple.heritage.et.itf;
+package exemple.heritage.itf.methode.object;
 
 import java.util.UUID;
 
@@ -33,5 +33,11 @@ public abstract class AbstractCapteur implements ICapteur {
 		} else {
 			turnOn();
 		}
+	}
+
+	@Override
+	public String toString() {
+		return String.format(" loc = %s %n isOn = %b %n serial = %s %n classe = %s", location, isOn(), getSerial(),
+				getClass().getSimpleName());
 	}
 }

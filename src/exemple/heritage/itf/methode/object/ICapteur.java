@@ -1,6 +1,6 @@
-package exemple.heritage.et.itf;
+package exemple.heritage.itf.methode.object;
 
-public interface Capteur {
+public interface ICapteur {
 
 	/**
 	 * Teste si le capteur est allumé.
@@ -17,6 +17,13 @@ public interface Capteur {
 	public String getSerial();
 
 	/**
+	 * Retourne le nom de la piece dans lequel est le capteur
+	 *
+	 * @return nom de la piece
+	 */
+	public String getLocation();
+
+	/**
 	 * Allume le capteur :
 	 */
 	public void turnOn();
@@ -25,5 +32,10 @@ public interface Capteur {
 	 * Eteint le capteur :
 	 */
 	public void turnOff();
+
+	/**
+	 * Allume si éteint, éteint si allumé
+	 */
+	public void switchState();
 
 }

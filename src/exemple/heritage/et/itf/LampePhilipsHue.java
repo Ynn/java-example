@@ -3,32 +3,31 @@ package exemple.heritage.et.itf;
 import java.util.UUID;
 
 //Notez bien qu'on utilise impléments et pas extend :
-public class LampeConstructeur1 implements Capteur {
+public class LampePhilipsHue extends AbstractCapteur {
+
+	public LampePhilipsHue(String location) {
+		super(location);
+	}
 
 	public String serial;
 	public boolean isOn = false;
 
-	LampeConstructeur1() {
-		this.serial = UUID.randomUUID().toString();
-	}
-
 	@Override
 	public boolean isOn() {
+		// Fait un traitement compliqué :
+		// HTTP :
 		return isOn;
 	}
 
 	@Override
-	public String getSerial() {
-		return serial;
-	}
-
-	@Override
 	public void turnOn() {
+		// Appel HTTP :
 		isOn = true;
 	}
 
 	@Override
 	public void turnOff() {
+		// Appel HTTP :
 		isOn = false;
 	}
 
