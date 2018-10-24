@@ -1,4 +1,4 @@
-package equalshashcode;
+package cours.equalshashcode;
 
 import java.util.ArrayList;
 import java.util.List;

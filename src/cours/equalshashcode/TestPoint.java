@@ -1,4 +1,4 @@
-package equalshashcode;
+package cours.equalshashcode;
 
 public class TestPoint {
 

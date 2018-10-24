@@ -1,8 +1,14 @@
 package equalshashcode.exo;
 
 public class Personne {
-	int age;
-	String nom;
+	private int age;
+	private String nom;
+
+	public Personne(int age, String nom) {
+		super();
+		this.age = age;
+		this.nom = nom;
+	}
 
 	public int getAge() {
 		return age;
