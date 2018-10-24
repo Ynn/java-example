@@ -1,4 +1,4 @@
-package cours.equalshashcode.exo;
+package cours.equalshashcode.exo.compare;
 
 public class Personne implements Comparable<Personne> {
 	private int age;

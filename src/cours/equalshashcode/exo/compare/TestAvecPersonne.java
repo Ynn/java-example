@@ -1,4 +1,4 @@
-package cours.equalshashcode.exo;
+package cours.equalshashcode.exo.compare;
 
 import java.util.ArrayList;
 import java.util.Collection;

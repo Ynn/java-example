@@ -1,4 +1,4 @@
-package cours.equalshashcode.exo2;
+package cours.equalshashcode.exo.equals;
 
 public class Personne {
 	private int age;

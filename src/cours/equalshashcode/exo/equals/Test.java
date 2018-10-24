@@ -1,4 +1,4 @@
-package cours.equalshashcode.exo2;
+package cours.equalshashcode.exo.equals;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
