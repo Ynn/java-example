@@ -10,6 +10,30 @@ public class Personne {
 		this.nom = nom;
 	}
 
+	@Override
+	public int hashCode() {
+		return age + nom.hashCode();
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) {
+			return true;
+		}
+		if (obj instanceof Personne) {
+			Personne other = (Personne) obj;
+
+			if (this.nom == null) {
+				return other.nom == null;
+			}
+
+			return (this.age == other.age) && (this.nom.equals(other.nom));
+
+		}
+
+		return false;
+	}
+
 	public int getAge() {
 		return age;
 	}
