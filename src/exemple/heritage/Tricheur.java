@@ -6,6 +6,11 @@ public class Tricheur extends Idiot {
 		super(age, nom);
 	}
 
+	@Override
+	public String getNom() {
+		return super.getNom() + " le tricheur";
+	}
+
 	public void triche() {
 		System.out.println("triche triche");
 	}

@@ -18,7 +18,12 @@ public class Test {
 			System.out.println("Celui n'est pas malin");
 		}
 
-		afficherNom(p);
+		if (p instanceof Tricheur) {
+			Tricheur p2 = (Tricheur) p;
+			afficherNom(p2);
+		} else {
+			System.out.println("Le bout de code n'est pas appelé");
+		}
 
 		System.out.println("----------------------- En mémoire :");
 		System.out.println(p instanceof Object);
